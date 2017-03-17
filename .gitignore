@@ -1,0 +1,3 @@
+etc/data/hounan2015/*
+var/log/*
+!.gitkeep
