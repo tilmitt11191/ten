@@ -1,0 +1,47 @@
+Loaded suite ../../test_cases/utils/io_test
+Started
+diff
+line0:
+東1局 0本場(リーチ0)  ガミゴン 1000 愛内里菜 1000 ranu- 1000 ネームレス７ -3000
+------
+東1局 0本場(リーチ0)  ガミゴン 1000 愛内里菜 1000 ranu- 1000 ネームレス７ -3000
+
+
+line1:
+1,南,tsumogiri,
+------
+1,南,tsumogiri
+
+line2:
+2,7s,tedashi
+------
+2,7s,tedashi,naki,tedashi
+
+line3:
+1.東,tedashi
+------
+1,東,tedashi
+
+line35:
+1,3p,tedashi
+------
+1,3p,reach,tedashi
+
+line53:
+3,9p,tedashi
+------
+3,9p,tedashi,naki,tedashi
+
+line60:
+3,9p,tedashi
+------
+3,9p,reach,tedashi
+
+.
+
+Finished in 0.070304924 seconds.
+------
+1 tests, 1 assertions, 0 failures, 0 errors, 0 pendings, 0 omissions, 0 notifications
+100% passed
+------
+14.22 tests/s, 14.22 assertions/s

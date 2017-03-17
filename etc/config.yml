@@ -1,0 +1,7 @@
+
+logdir: ../../var/log/
+logfile: log
+loglevel: DEBUG
+
+num_of_max_line: 10000
+

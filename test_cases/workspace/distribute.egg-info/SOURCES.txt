@@ -1,0 +1,6 @@
+distribute.egg-info/PKG-INFO
+distribute.egg-info/SOURCES.txt
+distribute.egg-info/dependency_links.txt
+distribute.egg-info/requires.txt
+distribute.egg-info/top_level.txt
+distribute.egg-info/zip-safe
