@@ -250,6 +250,7 @@ class File_manager_test(unittest.TestCase):
 	#	self.log.info("test_set_machi_of_chitoitsu start.")
 	#	self.log.info("test_set_machi_of_chitoitsu finished.")
 
+	#1m2m3m5M7m4p5p4s4s東東発
 
 try:
 	if __name__ == '__main__':

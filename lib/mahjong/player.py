@@ -33,6 +33,7 @@ class Player:
 		self.log.info("init_hand_with("+str(haipai)+ ", " + type +")")
 		self.tehai = [0]*37
 		if type == "str":
+			self.log.debug("convert str to array")
 			tmp = haipai.replace("m", "m,")\
 			.replace("p", "p,")\
 			.replace("s", "s,")\
@@ -84,6 +85,13 @@ class Player:
 				elif type == "array":
 					result.extend([hai]*number_of_hai)
 		return result
+
+	def get_machi(self, type="str"):
+		if type == "str":
+			result = ""
+			for hai in self.machi:
+				result += self.TABLE[hai]
+		return result
 	
 	
 	def count_tehai(self):
@@ -116,7 +124,7 @@ class Player:
 					##AGARI!
 					self.log.debug("mentsu[9]!=0.break.")
 					return 1, mentsu
-				self.log.debug("i>=38. pick_up_mentsu finished.")
+				self.log.debug("i>=36. pick_up_mentsu finished.")
 				return 1, mentsu
 
 			if self.tehai[i] < 1:
@@ -226,8 +234,9 @@ class Player:
 
 	def calc_machi(self):
 		self.log.info("calc_machi[" + self.get_tehai(type="str") + "]start")
-		if self.tehai != 13:
-			self.log.error("tehai !=13[" + str(len(self.tehai)))
+		if self.count_tehai() != 13:
+			self.log.error("tehai !=13[" + str(self.count_tehai()) + "]")
+			self.log.error("tehai[" + self.get_tehai(type="str") + "]")
 
 		agari = 0 #flag
 		mentsu = [0]*10

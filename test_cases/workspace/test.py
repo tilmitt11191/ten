@@ -1,5 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+
+
+"""
 class A:
 	def fact(self, n, a = 1):
 		print("fact[" + str(n) + ", " + str(a) + "]")
@@ -10,7 +13,7 @@ class A:
 		self.fact(n - 1, n * a)
 a=A()
 print(a.fact(3))
-
+"""
 
 """
 TABLE = {1:"1m",2:"2m",3:"3m",4:"4m",5:"5M",6:"5m",7:"6m",8:"7m",9:"8m",10:"9m",\
