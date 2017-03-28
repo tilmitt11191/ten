@@ -19,7 +19,6 @@ class File_manager_test(unittest.TestCase):
 	def setUp(self):
 		pass
 	
-	"""
 	def test_player_tsumo(self):
 		import tenhou
 		t = tenhou.Tenhou()
@@ -37,9 +36,8 @@ class File_manager_test(unittest.TestCase):
 		#['1m', '3m', '7s', '5m', '東', '8m', '1p', '5P', '6p', '西', '7p', '3s', '8s']
 		#['1m', '1p', '3m', '3s', '5P', '5m', '6p', '7p', '7s', '8m', '8s', '東', '西']			
 	
-	"""
 	
-	def test_get_final_tehai_from_sample1txt(self):
+	def test_get_final_tehai_from_sample3txt(self):
 		self.log.info("simlate_sample1txt start.")
 		
 		sample = \
@@ -127,13 +125,9 @@ class File_manager_test(unittest.TestCase):
 		self.assertEqual("南", t.players[1].seki)
 		correct_tehai = ['2m', '2m', '3m', '6p', '7p', '1s', '2s', '3s', '4s', '4s', '6s', '北', '発']
 		self.assertEqual(correct_tehai, t.players[1].get_tehai(type="array"))
-		
-
-	
 
 	def test_simulate_sample1txt(self):
 		self.log.info("test_simulate_sample1txt start.")
-		"""
 		sample = \
 			"===== 天鳳 L0000 鳳南喰赤 開始 2015/12/31 http://tenhou.net/0/?log=2015123123gm-00a9-0000-e7914a2e&tw=0 =====\n"\
 			"  持点25000 [1]ガミゴン/七段/男 R2104 [2]愛内里菜/八段/女 R2139 [3]ranu-/八段/男 R2185 [4]ネームレス７/七段/女 R2053\n"\
@@ -158,12 +152,67 @@ class File_manager_test(unittest.TestCase):
 		import codecs
 		with codecs.open('sample1.txt', 'w', 'cp932') as f:
 			f.write(sample)
-		"""
 		from tenhou import Tenhou as tenhou
 		t = tenhou()
 		t.simulate_logfile("sample1.txt", "cp932", output_codec="cp932", output_format=["player", "tsumo", "player_machi", "player_tehai"], output_file_suffix="csv")
 		self.log.info("test_simulate_sample1txt finished.")
 
+
+	def test_simulate_sample12xt(self):
+		self.log.info("test_simulate_sample2txt start.")
+
+		sample2 = \
+			"===== 天鳳 L0000 鳳南喰赤 開始 2015/12/31 http://tenhou.net/0/?log=2015123123gm-00a9-0000-e7914a2e&tw=0 =====\n"\
+			"  東1局 1本場(リーチ2)  ガミゴン -1300 ネームレス７ 3300\n"\
+			"    30符1000点1飜ロン 断幺九1\n"\
+			"    [1東]5m6m8m5p7p9p3s4s5s6s9s東発\n"\
+			"    [2南]6m9m9m1p1p6p7p1s6s9s9s北中\n"\
+			"    [3西]2m3m3m5M7m4p5p9p4s4s南西北\n"\
+			"    [4北]1m3m4m5m2p2p5p4s7s西北白中\n"\
+			"    [表ドラ]6p [裏ドラ]\n"\
+			"    * 1G8s 1d発 2G白 2d北 3G9s 3d南 4G1m 4d西 1G西 1D西 2G8s 2d1s 3G1m 3d西\n"\
+			"    * 4G4p 4d北 1G3m 1d9s 2G2p 2d中 3G8s 3d北 4G8p 4d中 1G3p 1d東 2G5s 2d白\n"\
+			"    * 3G東 3d9p 4G2m 4d白 1G6p 1d9p 2G1s 2D1s 3G白 3D白 4G南 4D南 1G2s 1d8s\n"\
+			"    * 2G8p 2d6m 3G東 3d8s 4G7s 4d1m 1G8m 1d3m 2G6m 2D6m 3C5M7m 3d3m 4G6m 4d4s\n"\
+			"    * 1G8m 1d3p 2G7p 2d8s 3G発 3d9s 4G南 4D南 1G6p 1d6p 2G1s 2D1s 3G4m 3D4m\n"\
+			"    * 4G2m 4D2m 1G7p 1D7p 2G2m 2D2m 3G9p 3D9p 4G中 4D中 1G西 1D西 2G白 2D白\n"\
+			"    * 3G2s 3D2s 4G7m 4d1m 1G1m 1D1m 2G8p 2d9s 3G7s 3D7s 4N7s7s 4d8p 1G3p 1D3p\n"\
+			"    * 4A\n\n"
+
+		import codecs
+		with codecs.open('sample2.txt', 'w', 'cp932') as f:
+			f.write(sample2)
+
+		from tenhou import Tenhou as tenhou
+		t = tenhou()
+		t.simulate_logfile("sample2.txt", "cp932", output_codec="cp932", output_format=["player", "tsumo", "player_machi", "player_tehai"], output_file_suffix="csv")
+		self.log.info("test_simulate_sample1txt finished.")
+
+	def test_simulate_sample14xt(self):
+		self.log.info("test_simulate_sample4txt start.")
+
+		from tenhou import Tenhou as tenhou
+		t = tenhou()
+		t.simulate_logfile("sample4.txt", "cp932", output_codec="cp932", output_format=["player", "tsumo", "player_machi", "player_tehai"], output_file_suffix="csv")
+		self.log.info("test_simulate_sample4txt finished.")
+
+	def test_simulate_sample15xt(self):
+		self.log.info("test_simulate_sample5txt start.")
+
+		from tenhou import Tenhou as tenhou
+		t = tenhou()
+		t.simulate_logfile("sample5.txt", "cp932", output_codec="cp932", output_format=["player", "tsumo", "player_machi", "player_tehai"], output_file_suffix="csv")
+		self.log.info("test_simulate_sample5txt finished.")
+
+	def test_simulate_sample16xt(self):
+		self.log.info("test_simulate_sample5txt start.")
+
+		from tenhou import Tenhou as tenhou
+		t = tenhou()
+		t.simulate_logfile("sample6.txt", "cp932", output_codec="cp932", output_format=["player", "tsumo", "player_machi", "player_tehai"], output_file_suffix="csv")
+		self.log.info("test_simulate_sample6txt finished.")
+	
+	
 
 """
 2017-03-20 23:08:43,570 - ERROR - tehai !=13[12]
@@ -184,6 +233,63 @@ class File_manager_test(unittest.TestCase):
 2017-03-20 23:08:44,535 - ERROR - tehai[4m6m6m6m7m8m4p5p4s5s6s7s]
 2017-03-20 23:08:45,868 - ERROR - tehai !=13[12]
 2017-03-20 23:08:45,868 - ERROR - tehai[6m7m4p4p3s3s3s4s4s4s5S5s]
+
+===== 天鳳 L0000 鳳南喰赤 開始 2015/12/31 http://tenhou.net/0/?log=2015123123gm-00a9-0000-ccc346e2&tw=0 =====
+* 1G5p 1d南 2G北 2d1p 3G4p 3d9p 4G中 4d東 1G3s 1d北 2G2m 2d東 3G1p 3d北
+* 4G北 4D北 1G1s 1D1s 2G3m 2d北 3G9m 3D9m 4G2p 4d9s 1G南 1D南 2G東 2D東
+* 3G3p 3d白 4G5m 4d1m 1G西 1D西 2N西西 2d5s 3G2p 3d4p 4G中 4d9p 1G4s 1d1s
+* 2G5m 2d7p 3G8p 3D8p 4G2s 4d8m 1G6s 1D6s 2G東 2d8s 3G白 3D白 4G9p 4D9p
+* 1G発 1D発 2G9p 2D9p 3G8s 3R 3d7s 4G2s 4d1s 1G西 1D西 2G8m 2d東 3G7p
+* 3D7p 4G8m 4d8p 1G9m 1R 1d4s 2G6s 2d9s 3G1m 3D1m 4G5p 4d7s 1G発 1D発
+* 2G6s 2d6s 3G4s 3D4s 4G3m 4d6s 1G8p 1D8p 2G5s 2d6s 3G白 3D白 4G4m 4d2p
+* 1G1p 1D1p 2G4m 2d5s 3G3s 3D3s 4G3s 4D3s 1G2m 1D2m 2G4p 2d2m 3G3m 3D3m
+* 4G9m 4d3m 1G南 1D南 2G5M 2d2m 3G6p 3D6p 1A
+
+* 1G3m 1d西 2G1m 2d西 3G7s 3d4m 4G白 4d南 1G中 1d1p 2G9m 2d南 3G4s 3d9p
+* 4G7p 4d1s 1G北 1d9s 2G6p 2D6p 3G4s 3d東 4G9s 4d白 1G6p 1d9p 2G6p 2D6p
+* 3G4s 3d4p 4G8m 4d北 1G5p 1d8p 2G2p 2d5s 3G7s 3d7m 4G発 4D発 1G発 1d北
+
+
+* 4G9s 4d9m 1G東 1d1s 2G4s 2D4s 3G6p 3d3s 4G4p 4d3s 1G4m 1d東 2G7m 2D7m
+* 3G白 3d6p 4G3p 4d6s 1G4p 1d6p 2G発 2D発 3G8p 3D8p 4G9m 4D9m 1G7p 1d6s
+* 2C4s5s 2d2m 3G2s 3d白 4G南 4d7s 1G5p 1d7p 2G南 2D南 3G西 3D西 4G2p 4d南
+
+
+#* 1G3s 1K白 1G8p 1D8p 2G南 2d5s 3G3m 3d8s 4G2p 4D2p 1G1m 1d8m 2G4m 2d9m
+
+2017-03-25 15:16:09,697 - DEBUG - line[西1局 0本場(リーチ0)  ヤコブコーエン 13000 寸ちゃん -12000]
+2017-03-25 15:16:09,697 - DEBUG - line[満貫ロン 断幺九1 ドラ1 赤ドラ3]
+2017-03-25 15:16:09,697 - DEBUG - line[[1東]6m7m8m3p3p5P5p2s7s8s南白中]
+2017-03-25 15:16:09,698 - DEBUG - haipai start.
+2017-03-25 15:16:09,698 - INFO - create_player([1東]6m7m8m3p3p5P5p2s7s8s南白中) start.
+
+
+
+
+
+2017-03-25 15:16:12,484 - DEBUG - line[[表ドラ]3s [裏ドラ]]
+2017-03-25 15:16:12,484 - DEBUG - line[* 1G1p 1d南 2G4s 2d北 3G4s 3d西 4G6p 4d発 1G9s 1d中 2G南 2D南 3G1m 3D1m]
+2017-03-25 15:16:12,484 - DEBUG - action start.
+2017-03-25 15:16:12,484 - DEBUG - action * start.
+2017-03-25 15:16:12,484 - DEBUG - action 1G1p start.
+2017-03-25 15:16:12,484 - DEBUG - action means tsumo
+2017-03-25 15:16:12,484 - DEBUG - player[1] drew 1p
+2017-03-25 15:16:12,484 - DEBUG - tehai:1m1m2m2m3m3m1p1p3p4p5p3s4s
+2017-03-25 15:16:12,484 - INFO - player[1]_tsumo[1p] start.
+2017-03-25 15:16:12,485 - DEBUG - player.id[1], id[1]
+2017-03-25 15:16:12,485 - INFO - player.tsumo[1p] start.
+2017-03-25 15:16:12,485 - DEBUG - result.size[5]
+2017-03-25 15:16:12,485 - DEBUG - action 1d南 start.
+2017-03-25 15:16:12,485 - DEBUG - action means tedashi
+2017-03-25 15:16:12,485 - INFO - player[1]_discard[南] start.
+2017-03-25 15:16:12,486 - DEBUG - player.id[1], id[1]
+2017-03-25 15:16:12,486 - INFO - player.discard[南] start.
+2017-03-25 15:16:12,486 - ERROR - mottenai hai wo suteta
+2017-03-25 15:16:12,486 - ERROR - discard[ 南, tehai[1m1m2m2m3m3m1p1p1p3p4p5p3s4s]
+2017-03-25 15:16:12,486 - DEBUG - result.size[5]
+2017-03-25 15:16:12,486 - INFO - calc_machi[1m1m2m2m3m3m1p1p1p3p4p5p3s4s]start
+
+
 """
 
 if __name__ == '__main__':

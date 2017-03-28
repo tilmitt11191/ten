@@ -55,6 +55,7 @@ class Player:
 			for hai in haipai:
 				self.tehai[Player.TABLE_INV[hai]] += 1
 		self.machi = []
+		self.log.debug("init_hand_with("+str(haipai)+ ", " + type +") finished. self.tehai[" + self.get_tehai(type="str") + "]")
 		
 	def haipai(self, haipai, haipai_type):
 		self.log.info("player.haipai start.")
@@ -67,6 +68,7 @@ class Player:
 		self.log.info("player.discard[{hai}] start.".format(**locals()))
 		if self.tehai[Player.TABLE_INV[hai]] < 1:
 			self.log.error("mottenai hai wo suteta")
+			self.log.error("discard[ " + hai + ", tehai[" + self.get_tehai(type="str") + "]")
 		else:
 			self.tehai[Player.TABLE_INV[hai]] -= 1
 		
@@ -75,6 +77,8 @@ class Player:
 			result = ""
 		elif type == "array":
 			result = []
+		else:
+			self.log.error("TYPE ERROR: get_tehai(" + type + ")")
 		for hai_inv in self.NARABI:
 			hai = Player.TABLE[hai_inv]
 			number_of_hai = self.tehai[hai_inv]
@@ -235,7 +239,7 @@ class Player:
 	def calc_machi(self):
 		self.log.info("calc_machi[" + self.get_tehai(type="str") + "]start")
 		if self.count_tehai() != 13:
-			self.log.error("tehai !=13[" + str(self.count_tehai()) + "]")
+			self.log.error("player[" + self.id + "] tehai[" + str(self.count_tehai()) + "] !=13")
 			self.log.error("tehai[" + self.get_tehai(type="str") + "]")
 
 		agari = 0 #flag

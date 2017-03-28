@@ -29,14 +29,17 @@ class Tenhou:
 
 		result = []
 		status = "" #∈{start, drew, discarded}
+		self.sutehai = ""
+		event=""
 		while line:
 			line = line.strip()
 			self.log.debug("line[" + line + "]")
 			import re
 			
 			if line[0:1] == "=":
+				print(line)
 				result = self.start_of_game_line(line, result)
-			elif line[0:1] in {"東", "南"}:
+			elif line[0:1] in {"東", "南", "西", "北"}:
 				result, status, event = self.start_of_kyoku_line(line, result)
 
 			elif re.match("\[\d", line[0:2]):
@@ -66,6 +69,7 @@ class Tenhou:
 			fm.initialize_output_file(output_filename, suffix=output_file_suffix)
 		return fm
 		
+
 		
 	def start_of_game_line(self, line, result):
 		self.log.debug("start_of_game start.")
@@ -75,8 +79,8 @@ class Tenhou:
 	def start_of_kyoku_line(self, line, result):
 		self.log.debug("start_of_kyoku start.")
 		result.append(line)
-		self.log.debug("self.players = []")
 		self.players = []
+		self.log.debug("self.players = []. len[" + str(len(self.players)) + "]")
 		status = "start"
 		event = ""
 		return result, status, event
@@ -85,7 +89,7 @@ class Tenhou:
 		self.log.debug("haipai start.")
 		self.create_player(line)
 		machi = self.get_machi_str(int(line[1]))
-		result.append(line[1] + ",," + machi + "," + self.players[int(line[1])-1].get_tehai(type="str"))
+		result.append(line[1] + ",,," + machi + "," + self.players[int(line[1])-1].get_tehai(type="str"))
 		return result
 	
 	def get_machi_str(self, player_number):
@@ -99,7 +103,9 @@ class Tenhou:
 		actions = line.split(" ")
 		for action in actions:
 			self.log.debug("action " + action + " start.")
-			if action.count("G"): 
+			if action == "*":
+				pass
+			elif action.count("G"): 
 				self.log.debug("action means tsumo")
 				if status in {"start", "discarded"}:
 					player, tsumo = action.split("G")
@@ -115,14 +121,27 @@ class Tenhou:
 			elif action.count("A"):
 				self.log.debug("action means agari")
 				status = "discarded"
+			elif action.count("K"):
+				player, hai = action.split("K")
+				if status == "discarded":
+					self.log.debug("action means minkan")
+					self.player_naki(player, hai)
+				elif status == "drew":
+					self.log.debug("action means ankan or kakan")
+					status = "discarded"
+				self.player_discard(player, hai)
 			elif action.count("N"):
-				self.log.debug("action means naki")
+				self.log.debug("action means pon")
 				player, hai = action.split("N")
 				self.player_naki(player, hai)
+			elif action.count("C"):
+				player, hai = action.split("C")
+				self.player_chi(player, self.sutehai)
 			elif action.count("D"):
 				self.log.debug("action means tsumogiri")
 				player, hai = action.split("D")
 				self.player_discard(player, hai)
+				self.sutehai = hai
 				if status == "drew":
 					status = "discarded"
 					self.log.debug("result.size[" + str(len(result)) + "]")
@@ -134,6 +153,7 @@ class Tenhou:
 				self.log.debug("action means tedashi")
 				player, hai = action.split("d")
 				self.player_discard(player, hai)
+				self.sutehai = hai
 				if status == "drew":
 					status = "discarded"
 					self.log.debug("result.size[" + str(len(result)) + "]")
@@ -141,6 +161,8 @@ class Tenhou:
 					event = ""
 					machi = self.get_machi_str(int(player))
 					result[len(result)-1] += "," + machi + "," + self.players[int(player)-1].get_tehai(type="str")
+			else:
+				self.log.error("action[" + action + "] not defined.")
 		
 		return result, status, event
 		
@@ -177,7 +199,7 @@ class Tenhou:
 			self.log.debug("line[{line}]".format(**locals()))
 			import re
 			
-			if line[0:1] in {"東", "南"}:
+			if line[0:1] in {"東", "南", "西", "北"}:
 				self.log.debug("start of kyoku")
 				self.status = "start"
 				output.append(line)
@@ -327,6 +349,13 @@ class Tenhou:
 				player.tsumo(hai)
 				break
 		
+	def player_chi(self, id, sutehai):
+		self.log.info("player[{id}]_chi[{sutehai}] start.".format(**locals()))
+		for player in self.players:
+			self.log.debug("player.id[{player.id}], id[{id}]".format(**locals()))
+			if player.id == id:
+				player.tsumo(sutehai)
+				break
 
 	def player_discard(self, id, hai):
 		self.log.info("player[{id}]_discard[{hai}] start.".format(**locals()))

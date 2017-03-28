@@ -1,0 +1,14 @@
+  南1局 0本場(リーチ0)  toshimai 5800 ジャッカ～ル -5800
+    30符5800点3飜ロン 断幺九1 ドラ2
+    [1東]1m3m4m6m3p7p1s2s6s6s南北発
+    [2南]5M1p4p7p7p9p9p1s8s東北白中
+    [3西]6m8m9m6p6p8p4s5s5s8s9s西発
+    [4北]3m8m9m1p7p8p6s7s南南西西中
+    [表ドラ]9s2m [裏ドラ]
+    * 1G8m 1d北 2G9s 2d東 3G6m 3d発 4G南 4d1p 1G西 1D西 4N西西 4d中 1G8s 1d発
+    * 2G4s 2d北 3G7s 3d西 4G1m 4D1m 1G9s 1D9s 2G9m 2d1p 3G9m 3d5s 4C6s7s 4d3m
+    * 1G3m 1d南 4K南 4G5m 4D5m 1G5p 1d1m 2G3s 2d中 3G8p 3d8m 4G2m 4D2m 1G2s
+    * 1d6s 2G9p 2d9m 3G4s 3d5s 4G2s 4D2s 1N2s2s 1d1s 2G3s 2d5M 3G3p 3d9s 4G2m
+    * 4D2m 1G2p 1D2p 2G7m 2D7m 3G6s 3D6s 4G4p 4D4p 1C3p5p 1d7p 2G3s 2d7p 3G北
+    * 3D北 4G白 4D白 1G2p 1D2p 2G3m 2d7p 3G5p 3d9m 4G4p 4D4p 1G4m 1D4m 2G1p
+    * 2D1p 3G7m 3d9m 4G1m 4D1m 1G7s 1d4m 2G発 2d白 3G5p 3d7m 1A

@@ -1,0 +1,33 @@
+  南4局 1本場(リーチ1)  ヤコブコーエン -1300 seasui 2300
+    30符1000点1飜ロン 役牌 發1
+    [1南]1m2m2m3m6m1p1p3p4p5p7p4s東
+    [2西]4m7m4p4p2s3s6s9s東西北白発
+    [3北]5m6m9m2p3p6p8p1s1s2s5s南発
+    [4東]5m8m8m2p5P5p6p5s6s7s8s北発
+    [表ドラ]西 [裏ドラ]
+    * 4G4m 4d発 1G3s 1d東 2G発 2d北 3G4s 3d9m 4G6m 4d北 1G1m 1d6m 2G東 2d西
+    * 3G8p 3d発 2N発発 2d9s 3G中 3D中 4G4m 4d2p 1G南 1D南 2G6p 2d白 3G2p 3d南
+    * 4G2s 4D2s 1G9s 1D9s 2G4p 2d7m 3G9p 3D9p 4G5M 4d8s 1G4s 1D4s 2C2s3s 2d6p
+    * 3G7m 3d1s 4G中 4D中 1G3m 1d7p 2G5p 2D5p 4N5P5p 4d6p 1G白 1D白 2G8s 2d4m
+    * 3G西 3D西 4G7m 4d4m 1G7s 1D7s 2A
+
+  西1局 0本場(リーチ0)  ヤコブコーエン 13000 寸ちゃん -12000
+    満貫ロン 断幺九1 ドラ1 赤ドラ3
+    [1東]6m7m8m3p3p5P5p2s7s8s南白中
+    [2南]1m1m7m9m4p8p9p9p9p9p3s8s北
+    [3西]2m4m4m7m8m1p3p1s2s2s5s6s西
+    [4北]4m5m6m7m3p7p7p1s2s6s7s発中
+    [表ドラ]3s [裏ドラ]
+    * 1G1p 1d南 2G4s 2d北 3G4s 3d西 4G6p 4d発 1G9s 1d中 2G南 2D南 3G1m 3D1m
+    * 4G8p 4d中 1G6p 1d白 2G9m 2d8s 3G2p 3d2m 4G4s 4d1s 1G6s 1d2s 2G6m 2d4p
+    * 3G4p 3d1p 4G9m 4d3p 1G5S 1d1p 2G4p 2D4p 3G4s 3d1s 4G南 4D南 1G1s 1D1s
+    * 2G7p 2d1m 3G中 3D中 4G北 4D北 1G3s 1d5p 2G3m 2D3m 3G北 3D北 4G8m 4d7p
+    * 1C5P6p 1d9s 2G7s 2D7s 3G9m 3R 3d2s 4G6p 4d2s 1G中 1D中 2G1m 2d1m 3G白
+    * 3D白 4G2m 4D2m 1G5M 1d8m 2G5m 2d1m 3G1s 3D1s 4G8s 4d4s 1A
+
+  ---- 試合結果 ----
+  1位 ヤコブコーエン +49
+  2位 seasui +9
+  3位 zoo1964 -20
+  4位 寸ちゃん -38
+----- 終了 -----

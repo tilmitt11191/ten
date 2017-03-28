@@ -45,3 +45,126 @@ Finished in 0.070304924 seconds.
 100% passed
 ------
 14.22 tests/s, 14.22 assertions/s
+return logger
+ logfile[../../var/log/log2]
+ rotate_log_size[1073741824]
+ id[140510289300728]
+
+
+File_manager_test setUpClass finished.
+---------- start ---------
+test_convert_strtehai_to_arr start.
+return logger
+ logfile[../../var/log/log2]
+ rotate_log_size[1073741824]
+ id[140510289300728]
+return logger
+ logfile[../../var/log/log2]
+ rotate_log_size[1073741824]
+ id[140510289300728]
+Tenhou.__init__ finished.
+Tenhou.__init__ finished.
+convert_strtehai_to_arr(1m3m5m8m1p5P6p7p3s7s8s東西)
+convert_strtehai_to_arr(1m3m5m8m1p5P6p7p3s7s8s東西)
+test_init start.
+test_init start.
+return logger
+ logfile[../../var/log/log2]
+ rotate_log_size[1073741824]
+ id[140510289300728]
+return logger
+ logfile[../../var/log/log2]
+ rotate_log_size[1073741824]
+ id[140510289300728]
+return logger
+ logfile[../../var/log/log2]
+ rotate_log_size[1073741824]
+ id[140510289300728]
+Tenhou.__init__ finished.
+Tenhou.__init__ finished.
+Tenhou.__init__ finished.
+test_init finished.
+test_init finished.
+test_init finished.
+return logger
+ logfile[../../var/log/log2]
+ rotate_log_size[1073741824]
+ id[140576357285112]
+
+
+File_manager_test setUpClass finished.
+---------- start ---------
+test_convert_strtehai_to_arr start.
+return logger
+ logfile[../../var/log/log2]
+ rotate_log_size[1073741824]
+ id[140576357285112]
+return logger
+ logfile[../../var/log/log2]
+ rotate_log_size[1073741824]
+ id[140576357285112]
+Tenhou.__init__ finished.
+Tenhou.__init__ finished.
+convert_strtehai_to_arr(1m3m5m8m1p5P6p7p3s7s8s東西)
+convert_strtehai_to_arr(1m3m5m8m1p5P6p7p3s7s8s東西)
+test_init start.
+test_init start.
+return logger
+ logfile[../../var/log/log2]
+ rotate_log_size[1073741824]
+ id[140576357285112]
+return logger
+ logfile[../../var/log/log2]
+ rotate_log_size[1073741824]
+ id[140576357285112]
+return logger
+ logfile[../../var/log/log2]
+ rotate_log_size[1073741824]
+ id[140576357285112]
+Tenhou.__init__ finished.
+Tenhou.__init__ finished.
+Tenhou.__init__ finished.
+test_init finished.
+test_init finished.
+test_init finished.
+return logger
+ logfile[../../var/log/log2]
+ rotate_log_size[1073741824]
+ id[140239841991984]
+
+
+File_manager_test setUpClass finished.
+---------- start ---------
+test_convert_strtehai_to_arr start.
+return logger
+ logfile[../../var/log/log2]
+ rotate_log_size[1073741824]
+ id[140239841991984]
+return logger
+ logfile[../../var/log/log2]
+ rotate_log_size[1073741824]
+ id[140239841991984]
+Tenhou.__init__ finished.
+Tenhou.__init__ finished.
+convert_strtehai_to_arr(1m3m5m8m1p5P6p7p3s7s8s東西)
+convert_strtehai_to_arr(1m3m5m8m1p5P6p7p3s7s8s東西)
+test_init start.
+test_init start.
+return logger
+ logfile[../../var/log/log2]
+ rotate_log_size[1073741824]
+ id[140239841991984]
+return logger
+ logfile[../../var/log/log2]
+ rotate_log_size[1073741824]
+ id[140239841991984]
+return logger
+ logfile[../../var/log/log2]
+ rotate_log_size[1073741824]
+ id[140239841991984]
+Tenhou.__init__ finished.
+Tenhou.__init__ finished.
+Tenhou.__init__ finished.
+test_init finished.
+test_init finished.
+test_init finished.
